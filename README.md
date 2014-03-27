@@ -10,9 +10,9 @@ Basically same with in\_tail plugin. See http://docs.fluentd.org/articles/in_tai
 
 Following parameters are additionally available: 
 
-- add_path_field
+- path_key
 
-    Add `path` field which tells the log path being tailed. You may also specify the field name. Default is `path`.
+    Add `path` field which tells the log path being tailed. Specify the field name. 
 
 ## Contributing
 
