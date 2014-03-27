@@ -1,5 +1,4 @@
-require 'fluent/test'
-require 'fluent/plugin/in_tail_path'
+require_relative '../helper'
 
 class TailPathInputTest < Test::Unit::TestCase
   def setup

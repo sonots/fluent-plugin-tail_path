@@ -14,8 +14,5 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'fluent/test'
 require 'fluent/plugin/in_tail_path'
 
-require 'pry'
-binding.pry
-
 class Test::Unit::TestCase
 end

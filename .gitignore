@@ -11,3 +11,4 @@ tmp/*
 .yardoc
 .ruby-version
 pkg/*
+test/tmp/*
