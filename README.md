@@ -4,6 +4,10 @@
 
 This is an extension of fluentd in\_tail plugin to add `path` field which tells the log path being tailed
 
+## Requirements
+
+Fluentd v0.10.45 or above. 
+
 ## Parameters
 
 Basically same with in\_tail plugin. See http://docs.fluentd.org/articles/in_tail
