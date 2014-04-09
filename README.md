@@ -2,7 +2,9 @@
 
 ## About
 
-This is an extension of fluentd in\_tail plugin to add `path` field which tells the log path being tailed
+This is an extension of fluentd in\_tail plugin to add `path` field which tells the log path being tailed. 
+
+This plugin was created based on a pull request [fluentd#281](https://github.com/fluent/fluentd/pull/281). 
 
 ## Requirements
 
