@@ -1,5 +1,7 @@
 # fluent-plugin-tail_path
 
+[![Build Status](https://secure.travis-ci.org/sonots/fluent-plugin-tail_path.png?branch=master)](http://travis-ci.org/sonots/fluent-plugin-tail_path)
+
 ## About
 
 This is an extension of fluentd in\_tail plugin to add `path` field which tells the log path being tailed. 
