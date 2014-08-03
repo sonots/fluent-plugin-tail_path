@@ -9,21 +9,45 @@ class Fluent::NewTailPathInput < Fluent::NewTailInput
     super
   end
 
-  # Override to add path field
-  def convert_line_to_event(line, es, tail_watcher)
-    begin
-      line.chomp!  # remove \n
-      time, record = parse_line(line)
-      if time && record
-        record[@path_key] ||= tail_watcher.path unless @path_key.nil?
-        es.add(time, record)
-      else
-        log.warn "pattern not match: #{line.inspect}"
+  if method_defined?(:parse_line) # fluentd < 0.10.50
+
+    # Override to add path field
+    def convert_line_to_event(line, es, tail_watcher)
+      begin
+        line.chomp!  # remove \n
+        time, record = parse_line(line)
+        if time && record
+          record[@path_key] ||= tail_watcher.path unless @path_key.nil? # custom
+          es.add(time, record)
+        else
+          log.warn "pattern not match: #{line.inspect}"
+        end
+      rescue => e
+        log.warn line.dump, :error => e.to_s
+        log.debug_backtrace(e)
       end
-    rescue => e
-      log.warn line.dump, :error => e.to_s
-      log.debug_backtrace(e)
     end
+
+  else # fluentd >= 0.10.50
+
+    # Override to add path field
+    def convert_line_to_event(line, es, tail_watcher)
+      begin
+        line.chomp!  # remove \n
+        @parser.parse(line) { |time, record|
+          if time && record
+            record[@path_key] ||= tail_watcher.path unless @path_key.nil? # custom
+            es.add(time, record)
+          else
+            log.warn "pattern not match: #{line.inspect}"
+          end
+        }
+      rescue => e
+        log.warn line.dump, :error => e.to_s
+        log.debug_backtrace(e)
+      end
+    end
+
   end
 
   # Override to pass tail_watcher to convert_line_to_event
