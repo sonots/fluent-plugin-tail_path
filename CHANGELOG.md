@@ -1,3 +1,13 @@
+## 0.1.0 (2016/04/10)
+
+Fixes:
+
+* Fix for multiline format for >= v0.12
+
+Changes:
+
+* Drop supports for < v0.10.58 instead
+
 ## 0.0.3 (2015/02/17)
 
 Fixes:
