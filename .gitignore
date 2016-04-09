@@ -12,3 +12,4 @@ tmp/*
 .ruby-version
 pkg/*
 test/tmp/*
+Gemfile.fluentd.v10.lock
