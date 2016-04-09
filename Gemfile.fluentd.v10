@@ -1,4 +1,4 @@
 source "http://rubygems.org"
 
 gemspec
-gem 'fluentd', '0.10.49'
+gem 'fluentd', '~> v0.10.0'
