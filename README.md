@@ -2,6 +2,8 @@
 
 [![Build Status](https://secure.travis-ci.org/sonots/fluent-plugin-tail_path.png?branch=master)](http://travis-ci.org/sonots/fluent-plugin-tail_path)
 
+**THIS PLUGIN IS OBSOLETED. PATH_KEY OPTION WAS ADDED TO FLUENTD 0.12.24**
+
 ## About
 
 This is an extension of fluentd in\_tail plugin to add `path` field which tells the log path being tailed. 
